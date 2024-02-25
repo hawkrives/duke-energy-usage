@@ -1,0 +1,31 @@
+[project]
+name = "duke-energy-usage"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Hawken Rives", email = "hawken.rives@techcyte.com" }
+]
+dependencies = [
+    "sqlite-utils>=3.36",
+    "python-dotenv>=1.0.1",
+    "datasette>=0.64.6",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "duke_energy_usage:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/duke_energy_usage"]
